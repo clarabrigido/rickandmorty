@@ -2,8 +2,7 @@ import React from 'react';
 import logo from './logo.png';
 import './App.css';
 import fetchCharacters from './services/fetchCharacters';
-import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
+import Home from './components/Home';
 
 
 
@@ -52,14 +51,13 @@ class App extends React.Component {
           <img src={logo} className="app-logo" alt="logo" />
         </header>
         <main className="app-main">
-          <Filters 
-          getUserQuery={this.getUserQuery} 
-          query={query}
+
+          <Home 
+            getUserQuery={this.getUserQuery}
+            query={query}
+            characters={characters}
           />
-          
-          <CharacterList 
-          characters={characters}
-          query={query} />
+
         </main>
       </div>
     );
