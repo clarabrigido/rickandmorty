@@ -3,6 +3,8 @@ import logo from './logo.png';
 import './App.css';
 import fetchCharacters from './services/fetchCharacters';
 import CharacterList from './components/CharacterList';
+import Filters from './components/Filters';
+
 
 
 class App extends React.Component {
@@ -10,10 +12,21 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      query: ''
     }
+    this.getUserQuery = this.getUserQuery.bind(this);
   }
+  
+  getUserQuery(event){
+    const query =event.currentTarget.value;
 
+    this.setState({
+      query: query 
+      
+    });
+  }
+ 
   componentDidMount(){
     this.getCharacters();
   }
@@ -29,7 +42,8 @@ class App extends React.Component {
 
   render() {
     const {
-      characters
+      characters,
+      query
     } = this.state;
 
     return (
@@ -38,7 +52,14 @@ class App extends React.Component {
           <img src={logo} className="app-logo" alt="logo" />
         </header>
         <main className="app-main">
-          <CharacterList characters={characters} />
+          <Filters 
+          getUserQuery={this.getUserQuery} 
+          query={query}
+          />
+          
+          <CharacterList 
+          characters={characters}
+          query={query} />
         </main>
       </div>
     );

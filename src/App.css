@@ -9,7 +9,7 @@
 .app-header {
   background-color: #282c34;
   min-width: 100vh;
-  height: 200px;
+  height: 180px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -19,3 +19,37 @@
   color: white;
 }
 
+/* Estilos tarjetas  */
+
+.characters-list{
+  list-style: none;
+  padding: 0;
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-card{
+  width: 200px;
+  height: 320px;
+  background-color: rgb(78, 176, 201);
+  margin: 10px;
+  padding: 10px 0;
+  border: 2px solid #95cc4a;
+  border-radius: 10px;
+  
+}
+
+.character-image{
+  width: 180px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+/*Estilo filters*/
+
+.box-filters{
+  margin:20px;
+}
