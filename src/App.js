@@ -3,8 +3,8 @@ import logo from './logo.png';
 import './App.css';
 import fetchCharacters from './services/fetchCharacters';
 import Home from './components/Home';
-
-
+import CharacterDetail from './components/CharacterDetail';
+import {Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,13 +51,19 @@ class App extends React.Component {
           <img src={logo} className="app-logo" alt="logo" />
         </header>
         <main className="app-main">
-
-          <Home 
-            getUserQuery={this.getUserQuery}
-            query={query}
-            characters={characters}
-          />
-
+          <Switch>
+            <Route exact path="/" render={ ()=>{
+              return (
+                <Home 
+                  getUserQuery={this.getUserQuery}
+                  query={query}
+                  characters={characters}
+                /> 
+              );
+            }} />
+            <Route path="/character-detail" component={CharacterDetail}/>  
+          </Switch>
+             
         </main>
       </div>
     );
