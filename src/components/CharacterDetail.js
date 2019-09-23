@@ -4,15 +4,65 @@ import {Link} from 'react-router-dom';
 
 
 const CharacterDetail = props => {
-  const {routerProps} = props;
+  const {
+    routerProps,
+    characters
+  } = props;
   const characterId = parseInt(routerProps.match.params.characterId); 
+
+  if (characterId>characters.length){
+    return (
+      <p>Sigue buscando... </p>
+    );
+  }
+  const character = characters.filter(item => item.id === characterId);
+
+  console.log(routerProps);
+  
+  if (character[0]) {
+  const {
+    image,
+    name,
+    species,
+    origin,
+    episode,
+    status
+  } = character[0];
+
+
   return(
     <React.Fragment>
+    <div className="box-detail">Soy el detalle:
+      <div className="box__detail-image">
+      <img className="character__detail-image" src={image} alt={`Personaje ${name} de Rick & Morty`} />
+      </div>
+      <div className="box__detail-info">
+        <h2>Nombre: {name}</h2>
+        <p><strong>Especie: </strong>{species}</p>
+        <p><strong>Origen:</strong> {origin.name}</p>
+        <p><strong>Nº episiodios:</strong> {episode}</p> 
+        <p><strong>Estado:</strong> {status}</p>
+      </div>
     
-    <div>Soy el detalle</div>
+    {}</div>
     <Link to="/" className="link-back">Volver</Link>
     </React.Fragment>
   );
+  } else {
+    return( 
+      <React.Fragment>
+        <p>Lo siento, información no encontrada</p>
+        <Link to="/" className="link-back">Volver</Link>
+      </React.Fragment>
+    );
+  
+}
+};
+
+
+CharacterDetail.propTypes = {
+  routerProps: PropTypes.object.isRequired,
+  characters:PropTypes.arrayOf(PropTypes.object).isRequired 
 };
 
 export default CharacterDetail;
