@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 
 
 const CharacterDetail = props => {
-
+  const {routerProps} = props;
+  const characterId = parseInt(routerProps.match.params.characterId); 
   return(
     <React.Fragment>
     

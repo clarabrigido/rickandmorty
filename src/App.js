@@ -61,7 +61,15 @@ class App extends React.Component {
                 /> 
               );
             }} />
-            <Route path="/character-detail" component={CharacterDetail}/>  
+            <Route path="/character-detail/:characterId" render={(routerProps => {
+              return ( 
+                <CharacterDetail  
+                  routerProps= {routerProps}
+                />
+              );  
+            })}
+              />
+            
           </Switch>
              
         </main>
