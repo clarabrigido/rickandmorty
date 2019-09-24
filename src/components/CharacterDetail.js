@@ -42,7 +42,7 @@ const CharacterDetail = props => {
             <p><strong>Especie: </strong>{species}</p>
             <p><strong>Origen:</strong> {origin.name}</p>
             <p><strong>Nº episiodios:</strong> {episode.length}</p> 
-            <p><strong>Estado:</strong> {status}</p>
+            <p><strong>Estado:</strong> {status} {(status === 'Alive') ? <i className="fab fa-creative-commons-sampling"></i> : `${status}`}</p>
           </div>
           <div className="box__link-back">
             <Link to="/" className="link-back">Volver</Link>

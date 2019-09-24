@@ -21,6 +21,7 @@ const CharacterList = props => {
                 image={character.image}
                 name={character.name}
                 species={character.species} 
+              
               />
               </Link>
             </li>

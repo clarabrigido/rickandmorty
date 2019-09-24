@@ -12,7 +12,7 @@ const CharacterCard = props =>{
     <div className="character-card">
       <img className="character-image" src={image} alt={`Personaje ${name} de Rick & Morty`} />
       <h2 className="character-name">{name}</h2>
-      <p className="character-species">{species}</p>
+      <p className="character-species">{species} {(species === 'Human') ? <i className="fas fa-male"></i> : <i className="fab fa-reddit-alien"></i>}</p>
     </div>
   );
 };
