@@ -12,43 +12,41 @@ const CharacterDetail = props => {
 
   if (characterId>characters.length){
     return (
-      <p>Sigue buscando... </p>
+      <div>
+      <p>Vuelve al listado</p>
+      <Link to="/" className="link-back">Volver</Link>
+      </div>
     );
   }
   const character = characters.filter(item => item.id === characterId);
-
-  console.log(routerProps);
   
   if (character[0]) {
-  const {
-    image,
-    name,
-    species,
-    origin,
-    episode,
-    status
-  } = character[0];
-
-
-  return(
-    <React.Fragment>
-      <div className="box-detail">
-        <div className="box__detail-image">
-          <img className="character__detail-image" src={image} alt={`Personaje ${name} de Rick & Morty`} />
+    const {
+      image,
+      name,
+      species,
+      origin,
+      episode,
+      status
+    } = character[0];
+    return(
+      <React.Fragment>
+        <div className="box-detail">
+          <div className="box__detail-image">
+            <img className="character__detail-image" src={image} alt={`Personaje ${name} de Rick & Morty`} />
+          </div>
+          <div className="box__detail-info">
+            <h2>Nombre: {name}</h2>
+            <p><strong>Especie: </strong>{species}</p>
+            <p><strong>Origen:</strong> {origin.name}</p>
+            <p><strong>Nº episiodios:</strong> {episode.length}</p> 
+            <p><strong>Estado:</strong> {status}</p>
+          </div>
+          <div className="box__link-back">
+            <Link to="/" className="link-back">Volver</Link>
+          </div>
         </div>
-        <div className="box__detail-info">
-          <h2>Nombre: {name}</h2>
-          <p><strong>Especie: </strong>{species}</p>
-          <p><strong>Origen:</strong> {origin.name}</p>
-          <p><strong>Nº episiodios:</strong> {episode.length}</p> 
-          <p><strong>Estado:</strong> {status}</p>
-        </div>
-        <div className="box__link-back">
-          <Link to="/" className="link-back">Volver</Link>
-        </div>
-      </div>
-  
-    </React.Fragment>
+      </React.Fragment>
   );
   } else {
     return( 
@@ -57,7 +55,6 @@ const CharacterDetail = props => {
         <Link to="/" className="link-back">Volver</Link>
       </React.Fragment>
     );
-  
 }
 };
 
