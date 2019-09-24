@@ -12,10 +12,10 @@ const CharacterDetail = props => {
 
   if (characterId>characters.length){
     return (
-      <div>
-      <p>Vuelve al listado</p>
+      <React.Fragment>
+      <p className="text-advise">Vuelve al listado</p>
       <Link to="/" className="link-back">Volver</Link>
-      </div>
+      </React.Fragment>
     );
   }
   const character = characters.filter(item => item.id === characterId);
@@ -51,7 +51,7 @@ const CharacterDetail = props => {
   } else {
     return( 
       <React.Fragment>
-        <p>Lo siento, información no encontrada</p>
+        <p className="text-advise">Lo siento, información no encontrada</p>
         <Link to="/" className="link-back">Volver</Link>
       </React.Fragment>
     );

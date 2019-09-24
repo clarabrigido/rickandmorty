@@ -12,7 +12,7 @@
 
 .app-header {
   background-color: #282c34;
-  min-width: 100vh;
+  min-width: 100vw;
   height: 200px;
   padding: 40px;
   display: flex;
@@ -26,11 +26,23 @@
 .app-main{
   background-color: #282c34;
   padding: 30px;
+  min-height: 100vh;
 }
 
 /* Estilos tarjetas  */
 
-.characters-list{
+.characters-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 1rem;
+  list-style: none;
+  padding: 30px;
+  margin: 0;
+}
+
+/* Estilos con flexbox */
+
+/* .characters-list{
   list-style: none;
   padding: 30px;
   margin: 0;
@@ -39,10 +51,10 @@
   justify-content: center;
   align-items: center;
 
-}
+} */
 
 .character-card{
-  width: 200px;
+  max-width: 220px;
   height: 320px;
   background-color: rgb(78, 176, 201);
   margin: 10px;
@@ -110,7 +122,6 @@
 }
 
 
-
 .box__link-back{
   width: 70px;
   height: 30px;
@@ -120,6 +131,7 @@
   justify-content: center;
   align-items: center;
   border: 3px outset rgb(78, 176, 201);
+ 
 }
 
 .link-back{
@@ -127,18 +139,7 @@
  font-size: 20px;
 }
 
-/* .box-detail {
-  
-  display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: auto;
-  background-color: #95cc4a;
-  margin:50px;
-  border-radius: 20px;
-  
+.text-advise{
+  color: rgb(78, 176, 201);
 }
 
-.character__detail-image{
-  width: 100%;
-  border-radius: 20px;
-} */
