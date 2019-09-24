@@ -9,6 +9,7 @@ const Filters = props => {
   
   return (
     <div className="box-filters">
+      <label className="label-input">¿Qué personaje quieres buscar?</label>
       <input className="user-query" type="text" onChange={getUserQuery} value={query}></input>
     </div>
   );

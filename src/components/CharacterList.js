@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
+import {Link} from 'react-router-dom';
 
 const CharacterList = props => {
   const {
@@ -15,11 +16,13 @@ const CharacterList = props => {
         .map(character => {
           return (
             <li className="character" key={character.id}>
+              <Link className="character-link" to={`/character-detail/${character.id}`}>
               <CharacterCard 
                 image={character.image}
                 name={character.name}
                 species={character.species} 
               />
+              </Link>
             </li>
           ); 
         })}
