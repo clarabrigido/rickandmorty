@@ -14,7 +14,9 @@ const CharacterDetail = props => {
     return (
       <React.Fragment>
       <p className="text-advise">Vuelve al listado</p>
+      <div className="box__link-back">
       <Link to="/" className="link-back">Volver</Link>
+      </div>
       </React.Fragment>
     );
   }
@@ -52,7 +54,9 @@ const CharacterDetail = props => {
     return( 
       <React.Fragment>
         <p className="text-advise">Lo siento, información no encontrada</p>
+        <div className="box__link-back">
         <Link to="/" className="link-back">Volver</Link>
+        </div>
       </React.Fragment>
     );
 }
